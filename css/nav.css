@@ -1,0 +1,28 @@
+#left{
+    background-color: #eee;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+nav a{
+    margin: 0.3em 0;
+    text-decoration: none;
+    transition: margin-left 0.3s;
+}
+
+nav a:visited, nav a:active{
+    color: inherit;
+}
+
+nav a:hover{
+    margin-left: 1em;
+}
+
+.boldnav{
+    margin-left: 1em;
+    font-weight: 700;
+}

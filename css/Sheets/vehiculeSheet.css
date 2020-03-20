@@ -1,0 +1,22 @@
+.vehiculesheet{
+    border: 1px solid black;
+}
+
+.vehiculesheet img{
+    width: 100%;
+    max-width: 400px;
+}    
+
+.vehiculesheet .colorcontainer{
+    display: flex;
+}    
+
+.vehiculesheet .colorcontainer > div{
+    width: 20px;
+    height: 20px;
+    margin: 0 0.2em;
+}    
+
+.vehiculesheet:not(:last-child){
+    margin-bottom: 1em;
+}

@@ -1,0 +1,58 @@
+/* ---- GENERAL ---- */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited, a:active{
+    color: inherit;
+}
+
+.listshort{
+    margin: 0.5em;
+}
+
+.listshort:hover{
+    font-weight: 700;
+}
+
+.centeredflexed{
+    display: flex;
+    justify-content: center;
+}
+
+/* ---- MAIN ---- */
+
+#wrapper{
+    display: flex;
+    margin: 1em 0;
+    min-height: 60vh;
+}
+
+#left, #right{
+    width: 20%;
+    background-color: #eee;
+}
+
+/* ---- CONTENT ---- */
+
+#content{
+    flex: 3;
+    margin: 0 1em;
+    background-color: #eee;
+    width: 60%;
+}
+
+#content > *{
+    margin: 1em;
+}
+
+#content h2{
+    text-align: center;
+}
+
+#content > div{
+    display: flex;
+    flex-direction: column;
+}

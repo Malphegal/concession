@@ -1,0 +1,53 @@
+header{
+    background-color: #eee;
+    min-height: 3em;
+}
+
+header h1{
+    text-align: center;
+}
+
+header #searchbar{
+    padding-bottom: 0.5em;
+}
+
+header form > div{
+    display: flex;
+    flex-direction: column;
+}
+
+header select{
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: bold;
+    height: 40px;
+    margin: 0;
+    padding: 5px 8px;
+    min-width: 130px;
+}
+
+header label{
+    width: 70px;
+    background-color: #309DF4;
+    color: #fff;
+    padding: 0.8em;
+    position: relative;
+    margin: 0 0 17px 0;
+    float: left;
+    border-radius: 3px;
+}
+
+header .arrow-bot:after{
+    content: " ";
+    position: absolute;
+    right: 12px;
+    bottom: -15px;
+    border-top: 15px solid #309DF4;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: none;
+}
+
+header .disabledlabel{
+    opacity: 0.5;
+}
