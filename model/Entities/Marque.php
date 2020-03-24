@@ -1,6 +1,8 @@
 <?php
 	namespace model\Entities;
 
+    use app\Entity;
+
     define("IMG_MARQUES", "public" . DS . "img" . DS ."Marques" . DS);
 
     /**

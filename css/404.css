@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+main > div{
+    background-color: #fafafa;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    border: 1px #888 solid;
+}
+
+hr{
+    width: 80%;
+    border-color: #888;
+    border-bottom: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #f51919;
+}
+
+a:visited, a:link{
+    color: #f51919;
+}

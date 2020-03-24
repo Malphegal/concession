@@ -1,5 +1,5 @@
 <nav>
-    <a href="index.php" <?=checkNavTag("index.php")?>><span></span><span>Accueil</span></a>
+    <a href="index.php" <?=checkNavTag("index")?>><span></span><span>Accueil</span></a>
     <a href="?action=marqueListe" <?=checkNavTag("action=marque")?>><span></span><span>Nos marques</span></a>
     <a href="?action=vehiculeListe" <?=checkNavTag("action=vehicule")?>><span></span><span>Nos véhicules</span></a>
     <a href="">Part2 (todo:)</a>
@@ -17,6 +17,6 @@
             else
                 return "";
         }
-        return strpos($str, "index.php") !== false ? "class=\"boldnav\"" : "";
+        return ($str == "index") ? "class=\"boldnav\"" : "";
     }
 ?>

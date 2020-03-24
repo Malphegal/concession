@@ -1,6 +1,8 @@
 <?php
 	namespace model\Managers;
     
+    use app\Manager;
+    
     /**
      * Manager of Vehicule.
      * 

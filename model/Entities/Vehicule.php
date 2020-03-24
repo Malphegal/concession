@@ -2,6 +2,7 @@
 	namespace model\Entities;
     
     use app\Interfaces\Comparable;
+    use app\Entity;
 
     define("IMG_VEHICULES", "public" . DS . "img" . DS ."Vehicules" . DS);
 

@@ -1,5 +1,7 @@
 <?php
-	namespace model\Managers;
+    namespace model\Managers;
+    
+    use app\Manager;
     
     /**
      * Manager of Marque.

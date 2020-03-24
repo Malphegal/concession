@@ -1,5 +1,5 @@
 <?php
-	namespace model\Entities;
+	namespace app;
     
     /**
      * Abstract class of all classes that represent a table in the database.

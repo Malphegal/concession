@@ -1,5 +1,5 @@
 <?php
-    namespace model\Managers;
+    namespace app;
     
     use \model\bdd\DAO;
     
