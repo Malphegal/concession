@@ -12,7 +12,7 @@
     /**
      * Default controller.
      *
-     * @method fillModele() AJAX : fill the modele cbo of the nav.
+     * @method ajax_FillModele() AJAX : fill the modele cbo of the nav.
      * 
      * @method index() Invoke the index page.
      * 
@@ -33,7 +33,7 @@
         /**
          * AJAX : fill the modele cbo of the nav.
          */
-        public function fillModele()
+        public function ajax_FillModele()
         {
             $marque = $_GET["marque_cbo"];
 

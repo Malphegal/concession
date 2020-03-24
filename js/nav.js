@@ -2,7 +2,7 @@ $("document").ready(function(){
 
     // Lorsqu'on change la valeur de la cbo de Marque du header, on utilise AJAX pour remplir la cbo Modèle
     $("header #marqueselect").on("change", function(){
-        $.get('index.php?action=fillModele',
+        $.get('index.php?action=ajax_FillModele',
         {
             marque_cbo: $(this).val()
         },

@@ -13,7 +13,7 @@
                 <p>OOPS ! Something goes wrong...</p>
                 <hr />
                 <p>Please, check the URL above.</p>
-                <a href="index.php"><span>Accueil</span></a>
+                <a href="/<?php echo explode('/', $_SERVER['REQUEST_URI'])[1]; ?>/index.php"><span>Accueil</span></a>
             </div>
         </main>
     </body>

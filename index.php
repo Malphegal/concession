@@ -1,5 +1,4 @@
 <?php
-
     use controller\HomeController;
 
     // -- Defines --
@@ -18,7 +17,7 @@
     // -- Default controller
     
     $ctrl = new HomeController();
-    // ---- Choix de la page, gestion du $_GET
+    // ---- Manager $_GET values
 
     if (isset($_GET['action']))
         $action = $_GET['action'];
@@ -30,7 +29,7 @@
     else
         $id = null;
         
-    // ---- Création des données de la page à afficher
+    // ---- Create the webpage to display
     
     // TODO: a refaire proprement, avec moins de complexité
 
@@ -43,12 +42,12 @@
         return;
     }
 
-    // Si c'est 'fillModele', c'est de l'AJAX, pour la combobox des modèles par marque
-    if ($action == "fillModele")
+    // If $action == 'ajax_...', it's a AJAX request
+    if (substr($action, 0, 4) == "ajax")
     {
         echo $render;
     }
-    // Sinon c'est une page qu'on affiche
+    // Otherwise it's a full webpage request
     else
     {
         ob_start();
