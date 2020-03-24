@@ -18,7 +18,6 @@
     // -- Default controller
     
     $ctrl = new HomeController();
-
     // ---- Choix de la page, gestion du $_GET
 
     if (isset($_GET['action']))
