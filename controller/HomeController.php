@@ -42,7 +42,7 @@
 
             $res = [];
             foreach ($vehicules as $v)
-                if (!in_array($v->getModele(), $res) && $v->getMarque() == ucfirst($marque))
+                if (!in_array($v->getModele(), $res) && strtoupper($v->getMarque()) == strtoupper($marque))
                     $res[] = $v->getModele();
 
             return implode(",", $res);
@@ -57,7 +57,7 @@
         {
             return [
                 "view" => DEFAULT_TEMPLATE,
-                "data" => array("title" => "Concession Geges",
+                "data" => array("title" => TAB_TITLE . "Concession",
                     "content" => "indexContent.php",
                     "args" => null,
                     "css" => "")
@@ -70,14 +70,16 @@
         public function vehiculeListe()
         {
             $man = new VehiculeManager();
-            $vehicules = $man->findAll();
+            $args = $man->findAll();
+
+            usort($args, array(get_class($args[0]), "compare"));
 
             return [
                 "view" => DEFAULT_TEMPLATE,
-                "data" => array("title" => "Nos véhicules",
+                "data" => array("title" => TAB_TITLE . "Nos véhicules",
                     "content" => "Vehicules". DS . "vehiculeListeContent.php",
-                    "args" => $vehicules,
-                    "css" => "")
+                    "args" => $args,
+                    "css" => CSS_LINK_SHEET . "shortList.css\" />")
             ];
         }
         
@@ -93,7 +95,7 @@
 
             return [
                 "view" => DEFAULT_TEMPLATE,
-                "data" => array("title" => $vehicule,
+                "data" => array("title" => TAB_TITLE . $vehicule->getImmat() . " - " . $vehicule,
                     "content" => "Vehicules". DS . "vehiculeIDContent.php",
                     "args" => $vehicule,
                     "css" => CSS_LINK_SHEET . "vehiculeSheet.css\" />")
@@ -110,10 +112,10 @@
 
             return [
                 "view" => DEFAULT_TEMPLATE,
-                "data" => array("title" => "Nos marques",
+                "data" => array("title" => TAB_TITLE . "Nos marques",
                     "content" => "Marques" . DS . "marqueListe.php",
                     "args" => $marques,
-                    "css" => "")
+                    "css" => CSS_LINK_SHEET . "shortList.css\" />")
             ];
         }
 
@@ -129,10 +131,10 @@
 
             return [
                 "view" => DEFAULT_TEMPLATE,
-                "data" => array("title" => $marque->getNom(),
+                "data" => array("title" => TAB_TITLE . $marque->getNom(),
                     "content" => "Marques" . DS . "marqueIDContent.php",
                     "args" => $marque,
-                    "css" => "")
+                    "css" => CSS_LINK_SHEET . "marqueSheet.css\" />")
             ];
         }
         
@@ -153,7 +155,7 @@
 
             return [
                 "view" => DEFAULT_TEMPLATE,
-                "data" => array("title" => $modeleName,
+                "data" => array("title" => TAB_TITLE . $modeleName,
                     "content" => "Vehicules" . DS . "vehiculesPerModele.php",
                     "args" => $res,
                     "css" => CSS_LINK_SHEET . "vehiculeSheet.css\" />")

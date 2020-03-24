@@ -1,7 +1,11 @@
 <?php
+    $currentImg = $currentVehicule->getImage();
+    if (!file_exists($currentImg))
+        $currentImg = IMG_VEHICULES . "default.png";
+
     $newSheet = "";
     $newSheet .= "<div class=\"vehiculesheet\">"
-        . "<img src=\"" . $currentVehicule->getImg() . "\" />"
+        . "<figure><img src=\"" . $currentImg . "\" /></figure>"
         . "<dl>"
         . "<dt>Modèle : </dt><dd>" . $currentVehicule->getModele() . "</dd>"
         . "<dt>Marque : </dt><dd>" . $currentVehicule->getMarque() . "</dd>"
@@ -11,5 +15,4 @@
     foreach ($currentVehicule->getCouleurs() as $col)
         $newSheet .= "<div style=\"background-color: $col\"></div>";
     echo $newSheet . "</dd></dl></div>";
-
 ?>

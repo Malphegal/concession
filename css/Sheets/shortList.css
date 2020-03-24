@@ -1,0 +1,18 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.listshort:not(:last-child){
+    margin-bottom: 0.3em;
+}
+
+.listshort:hover{
+    font-weight: 700;
+}
+
+ul > a > span:first-child{
+    float: left;
+    width: 100px;
+}

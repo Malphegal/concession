@@ -3,7 +3,7 @@
 </h2>
 <?php
     $currentVehicule = $args;
-    include(VIEW_DIR . "Content/Nuggets/vehiculeFullSheet.php");
+    include(VIEW_SHEET_DIR . "vehiculeFullSheet.php");
 
     echo "<a href=\"?action=vehiculeListe\">&#60; Revenir à la liste</a>";
 ?>

@@ -1,0 +1,9 @@
+.marquesheet figure{
+    text-align: center;
+}
+
+.marquesheet figure img{
+    width: 100%;
+    max-width: 250px;
+    min-width: 100px;
+}

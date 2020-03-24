@@ -1,6 +1,8 @@
 <?php
 	namespace model\Entities;
 
+    define("IMG_MARQUES", "public" . DS . "img" . DS ."Marques" . DS);
+
     /**
      * Represent one row in the Marque database table.
      * 
@@ -16,7 +18,8 @@
      * @method getDesc() Get the value of desc.
      * @method setDesc() Set the value of desc.
      * 
-     * @method getimg() Get the image of the marque.
+     * @method getimage() Get the image of the marque.
+     * @method setimage() Set the image of the marque.
      * 
      * @method __toString() ToString override : gets the name.
      */
@@ -28,6 +31,7 @@
         private $nom;
         private $origine;
         private $desc;
+        private $image;
 
         // ---- CONSTRUCTORS ----
 
@@ -113,9 +117,19 @@
         /**
          * Get the image of the marque.
          */ 
-        public function getImg()
+        public function getImage()
         {
-            return "img/Marques/" . strtolower($this->nom) . ".png";
+            return IMG_MARQUES . $this->image;
+        }
+
+        /**
+         * Set the image of the marque.
+         * 
+         * @param string $image The new image value.
+         */ 
+        public function setImage($image)
+        {
+            $this->image = $image;
         }
         
         /**

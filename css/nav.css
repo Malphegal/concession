@@ -11,14 +11,18 @@ nav{
 nav a{
     margin: 0.3em 0;
     text-decoration: none;
-    transition: margin-left 0.3s;
 }
 
 nav a:visited, nav a:active{
     color: inherit;
 }
 
-nav a:hover{
+nav a span{
+    transition: margin-left 0.3s;
+    display: inline-block;
+}
+
+nav a:hover:not(.boldnav) span:nth-child(2){
     margin-left: 1em;
 }
 

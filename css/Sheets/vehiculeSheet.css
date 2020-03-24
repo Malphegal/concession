@@ -1,5 +1,20 @@
+.vehiculesheet-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vehiculesheet-container > div{
+    width: 23%;
+    margin: 0.3em;
+    min-width: 125px;
+}
+
 .vehiculesheet{
     border: 1px solid black;
+}
+
+.vehiculesheet > *{
+    margin: 1em;
 }
 
 .vehiculesheet img{
@@ -15,8 +30,4 @@
     width: 20px;
     height: 20px;
     margin: 0 0.2em;
-}    
-
-.vehiculesheet:not(:last-child){
-    margin-bottom: 1em;
 }

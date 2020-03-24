@@ -1,7 +1,7 @@
 <nav>
-    <a href="index.php" <?=checkNavTag("index.php")?>>Accueil</a>
-    <a href="?action=marqueListe" <?=checkNavTag("action=marque")?>>Nos marques</a>
-    <a href="?action=vehiculeListe" <?=checkNavTag("action=vehicule")?>>Nos véhicules</a>
+    <a href="index.php" <?=checkNavTag("index.php")?>><span></span><span>Accueil</span></a>
+    <a href="?action=marqueListe" <?=checkNavTag("action=marque")?>><span></span><span>Nos marques</span></a>
+    <a href="?action=vehiculeListe" <?=checkNavTag("action=vehicule")?>><span></span><span>Nos véhicules</span></a>
     <a href="">Part2 (todo:)</a>
 </nav>
 <?php

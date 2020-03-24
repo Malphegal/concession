@@ -1,6 +1,10 @@
 <?php
 	namespace model\Entities;
     
+    use app\Interfaces\Comparable;
+
+    define("IMG_VEHICULES", "public" . DS . "img" . DS ."Vehicules" . DS);
+
     /**
      * Represent one row in the Vehicule database table.
      * 
@@ -25,11 +29,14 @@
      * @method getNbPortes() Get the value of nbPortes.
      * @method setNbPortes() Set the value of nbPortes.
      * 
-     * @method getImg() Get the image of the vehicule.
+     * @method getImage() Get the image of the vehicule.
+     * @method setImage() Set the image of the vehicule.
+     * 
+     * @method compare() Compare 2 Vehicules based on Marque;
      * 
      * @method __toString() ToString override : gets the marque and modele value.
      */
-    final class Vehicule extends Entity{
+    final class Vehicule extends Entity implements Comparable{
 
         // ---- FIELDS ----
 
@@ -39,6 +46,7 @@
         private $couleurs;
         private $marque;
         private $nbPortes;
+        private $image;
 
         // ---- CONSTRUCTORS ----
 
@@ -183,11 +191,21 @@
         }
 
          /**
-         * Get the image of the vehicule
+         * Get the image of the vehicule.
          */ 
-        public function getImg()
+        public function getImage()
         {
-            return "img/Vehicules/" . $this->marque . "/" . $this->modele . ".png";
+            return IMG_VEHICULES . $this->image;
+        }
+
+         /**
+         * Set the image of the vehicule.
+         * 
+         * @param string $image The new image value.
+         */ 
+        public function setImage($image)
+        {
+            $this->image = $image;
         }
 
         /**
@@ -198,5 +216,19 @@
         public function __toString()
         {
             return $this->marque . " - " . $this->modele;
+        }
+
+        // -- Implements --
+        
+        /**
+         * Allow to compare 2 objects of type Vehicule.
+         *
+         * @param Vehicule $v1 The first vehicule to compare.
+         * @param Vehicule $v2 The second vehicule to compare.
+         * @return int A sort method int value.
+         */
+        public static function compare($v1, $v2)
+        {
+            return strcmp($v1->marque, $v2->marque);
         }
     }
