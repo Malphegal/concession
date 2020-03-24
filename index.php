@@ -33,7 +33,16 @@
         
     // ---- Création des données de la page à afficher
     
-    $render = $ctrl->$action($id);
+    // TODO: a refaire proprement, avec moins de complexité
+
+    $actionExists = method_exists(get_class($ctrl), $action);
+    if ($actionExists){
+        $render = $ctrl->$action($id);
+    }
+    else{
+        require(VIEW_DIR . "404.php");
+        return;
+    }
 
     // Si c'est 'fillModele', c'est de l'AJAX, pour la combobox des modèles par marque
     if ($action == "fillModele")
